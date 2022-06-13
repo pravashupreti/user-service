@@ -1,5 +1,6 @@
 package com.ea.userservice;
 
+import com.ea.userservice.security.JwtAuthenticationFilter;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -40,4 +41,10 @@ public class UserServiceApplication {
         return new BCryptPasswordEncoder();
     }
 
+
+    @Bean
+
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter();
+    }
 }
